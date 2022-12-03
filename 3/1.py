@@ -7,7 +7,7 @@ def main():
     for line in lines:
         first, second = splitstring(line)
         duplicate = find_duplicate_char(first, second)
-        score += calculate_score_per_char(duplicate[0])
+        score += calculate_score_per_char(duplicate)
 
     print("Score: " + str(score))
 
@@ -18,12 +18,9 @@ def splitstring(value):
 
 
 def find_duplicate_char(string1, string2):
-    common_characters = []
     for char in string1:
         if char in string2:
-            common_characters.append(char)
-
-    return common_characters
+            return char
 
 
 def calculate_score_per_char(char):

@@ -6,19 +6,16 @@ def main():
 
     for i in range(0, int(len(lines)/3)):
         duplicate = find_duplicate_char(lines[i*3], lines[(i*3)+1], lines[(i*3)+2])
-        score += calculate_score_per_char(duplicate[0])
+        score += calculate_score_per_char(duplicate)
 
     print("Score: " + str(score))
 
 
 def find_duplicate_char(string1, string2, string3):
-    common_characters = []
     for char in string1:
         if char in string2:
             if char in string3:
-                common_characters.append(char)
-
-    return common_characters
+                return char
 
 
 def calculate_score_per_char(char):
